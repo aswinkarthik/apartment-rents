@@ -5,7 +5,7 @@
       <div class="cell header"> Payment status </div>
     </div>
     <template v-for="tenant in tenants">
-      <div class="row hoverable" v-bind:key='tenant.id'>
+      <div class="row hoverable" v-bind:key='tenant.id' v-on:click="openTenant(tenant.id)">
         <div class="cell"> {{ tenant.name }} </div>
         <div class="cell" v-if="tenant.status">
           <i class="fa fa-check-square-o"></i>
@@ -31,6 +31,9 @@ export default {
     }
   },
   methods: {
+    openTenant: function (id) {
+      this.$router.push({ name: 'Tenant', params: { id } })
+    }
   }
 }
 </script>
@@ -73,5 +76,9 @@ export default {
 
 .red {
   color: red;
+}
+
+a {
+  text-decoration: none;
 }
 </style>
