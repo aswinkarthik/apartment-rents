@@ -1,6 +1,6 @@
-# appartment-rents
+# apartment-rents
 
-> Open source project to manage rent payment for appartments
+> Open source project to manage rent payment for apartments
 
 ## Intention
 

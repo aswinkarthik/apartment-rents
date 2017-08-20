@@ -12,7 +12,7 @@ export default {
   name: 'app',
   data: () => {
     return {
-      header: 'Appartment Rent Manager'
+      header: 'Apartment Rent Manager'
     }
   }
 }

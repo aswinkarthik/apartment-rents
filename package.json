@@ -1,7 +1,7 @@
 {
-  "name": "appartment-rents",
+  "name": "apartment-rents",
   "version": "1.0.0",
-  "description": "Open source project to manage rent payment for appartments",
+  "description": "Open source project to manage rent payment for apartments",
   "author": "Aswin <aswinkarthik93@gmail.com>",
   "private": true,
   "scripts": {
