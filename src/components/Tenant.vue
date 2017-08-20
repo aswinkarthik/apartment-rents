@@ -2,6 +2,10 @@
   <div>
     {{ id }}
     <div class="table">
+      <div class="row">
+        <div class="cell header"> Details </div>
+        <div class="cell header"> &nbsp; </div>
+      </div>
       <template v-for="each in Object.entries(tenant)">
         <div class="row hoverable" v-bind:key="each">
           <div class="cell">{{ each[0] | uppercase }}</div>
@@ -62,5 +66,10 @@ export default {
   width: 200px;
   padding: 20px;
   border-bottom: 1px solid @primary;
+}
+
+.header {
+  background: @primary;
+  color: white;
 }
 </style>

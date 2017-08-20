@@ -7,11 +7,9 @@
     <template v-for="tenant in tenants">
       <div class="row hoverable" v-bind:key='tenant.id' v-on:click="openTenant(tenant.id)">
         <div class="cell"> {{ tenant.name }} </div>
-        <div class="cell" v-if="tenant.status">
-          <i class="fa fa-check-square-o"></i>
-        </div>
-        <div class="cell red" v-if="!tenant.status">
-          <i class="fa fa-times"></i>
+        <div class="cell">
+          <i class="fa fa-check-square-o" v-if="tenant.status"></i>
+          <i class="fa fa-times red" v-if="!tenant.status"></i>
         </div>
       </div>
     </template>
@@ -21,7 +19,7 @@
 <script>
 export default {
   name: 'hello',
-  data () {
+  data: () => {
     return {
       msg: 'Welcome to Your Vue.js App',
       tenants: [
