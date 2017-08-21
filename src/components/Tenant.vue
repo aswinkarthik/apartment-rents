@@ -1,18 +1,30 @@
 <template>
   <div>
-    {{ id }}
-    <div class="table">
-      <div class="row">
-        <div class="cell header"> Details </div>
-        <div class="cell header"> &nbsp; </div>
-      </div>
-      <template v-for="each in Object.entries(tenant)">
-        <div class="row hoverable" v-bind:key="each">
-          <div class="cell">{{ each[0] | uppercase }}</div>
-          <div class="cell">{{ each[1] }}</div>
+    <div class="row">
+      <div class="col s12 m12">
+        <div class="card hoverable">
+          <div class="card-content">
+            {{ tenant.name }}
+          </div>
         </div>
-      </template>
+      </div>
     </div>
+    <table>
+      <thead class="table-header z-depth-1">
+        <tr>
+          <th>Sl. no</th>
+          <th>Date of payment</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(p, i) in payments" v-bind:key="p" class="hoverable">
+          <td>{{ i + 1 }}</td>
+          <td><i class="fa fa-calendar black-text" aria-hidden="true"></i> &nbsp; {{ p.date }}</td>
+          <td>{{ p.amount }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
@@ -23,9 +35,16 @@ export default {
     return {
       tenant: {
         id: this.$route.params.id,
-        name: 'Tenant Name',
+        name: 'Aswin Karthik',
         status: true
-      }
+      },
+      payments: [
+        { date: '2017-08-07', amount: 120 },
+        { date: '2017-08-06', amount: 115 },
+        { date: '2017-08-05', amount: 110 },
+        { date: '2017-08-04', amount: 125 },
+        { date: '2017-08-03', amount: 123.5 }
+      ]
     }
   },
   methods: {
@@ -40,35 +59,7 @@ export default {
 
 <style scoped lang="less">
 @import "../assets/css/vars.less";
-
-.table {
-  display: table;
-  border: 2px solid @primary;
-}
-
-.row {
-  display: table-row;
-  width: auto;
-  clear: both;
-  border: 1px solid @primary;
-}
-
-.hoverable:hover {
-  color: white;
-  background: @color5;
-  cursor: pointer;
-  transition: background-color 250ms linear;
-}
-
-.cell {
-  float: left;
-  display: table-column;
-  width: 200px;
-  padding: 20px;
-  border-bottom: 1px solid @primary;
-}
-
-.header {
+.table-header {
   background: @primary;
   color: white;
 }

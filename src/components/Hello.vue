@@ -1,21 +1,28 @@
 <template>
-  <div class="table">
-    <div class="row">
-      <div class="cell header"> Tenant name </div>
-      <div class="cell header"> Payment status </div>
-    </div>
+  <div class="wrap">
+    <br>
     <template v-for="tenant in tenants">
-      <div class="row hoverable" v-bind:key='tenant.id' v-on:click="openTenant(tenant.id)">
-        <div class="cell"> {{ tenant.name }} </div>
-        <div class="cell">
-          <i class="fa fa-check-square-o" v-if="tenant.status"></i>
-          <i class="fa fa-times red" v-if="!tenant.status"></i>
+      <div class="row" v-bind:key='tenant.id'>
+        <div class="col s12 m12">
+          <div class="card primary-color-dim hoverable">
+            <div class="card-content white-text">
+              <span class="card-title">{{ tenant.name }}</span>
+              <p>{{ tenant.description }}</p>
+            </div>
+            <div class="card-action">
+              <a :href="url(tenant.id)">View</a>
+            </div>
+          </div>
         </div>
       </div>
     </template>
+    <div class="fixed-action-btn">
+      <a id="scale-demo" href="#!" class="btn-floating btn-large primary-color scale-transition">
+        <i class="fa fa-plus"></i>
+      </a>
+    </div>
   </div>
 </template>
-
 <script>
 export default {
   name: 'hello',
@@ -23,15 +30,16 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App',
       tenants: [
-        { id: 1, name: 'Tenant1', status: true },
-        { id: 2, name: 'Tenant2', status: false }
+        { id: 1, name: 'Tenant1', description: 'Details of tenant 1' },
+        { id: 2, name: 'Tenant2', description: 'Details of tenant 2' }
       ]
     }
   },
   methods: {
     openTenant: function (id) {
       this.$router.push({ name: 'Tenant', params: { id } })
-    }
+    },
+    url: id => `#/tenants/${id}`
   }
 }
 </script>
@@ -40,43 +48,7 @@ export default {
 <style scoped lang="less">
 @import "../assets/css/vars.less";
 
-.table {
-  display: table;
-  border: 2px solid @primary;
-}
-
-.row {
-  display: table-row;
-  width: auto;
-  clear: both;
-  border: 1px solid @primary;
-}
-
-.hoverable:hover {
-  color: white;
-  background: @color5;
-  cursor: pointer;
-  transition: background-color 250ms linear;
-}
-
-.cell {
-  float: left;
-  display: table-column;
-  width: 200px;
-  padding: 20px;
-  border-bottom: 1px solid @primary;
-}
-
-.header {
-  background: @primary;
-  color: white;
-}
-
-.red {
-  color: red;
-}
-
-a {
-  text-decoration: none;
+.card-action a {
+  color: @secondary !important;
 }
 </style>
