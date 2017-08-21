@@ -4,27 +4,25 @@
       <div class="col s12 m12">
         <div class="card hoverable">
           <div class="card-content">
-            {{ tenant.name }}
+            <h4>{{ tenant.id }} - {{ tenant.name }}</h4>
           </div>
         </div>
       </div>
     </div>
-    <table>
-      <thead class="table-header z-depth-1">
-        <tr>
-          <th>Sl. no</th>
-          <th>Date of payment</th>
-          <th>Amount</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(p, i) in payments" v-bind:key="p" class="hoverable">
-          <td>{{ i + 1 }}</td>
-          <td><i class="fa fa-calendar black-text" aria-hidden="true"></i> &nbsp; {{ p.date }}</td>
-          <td>{{ p.amount }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <ul class="collection with-header">
+      <li class="collection-header">
+        <h4>Payments</h4>
+      </li>
+      <li class="collection-item hoverable" v-for="(p, i) in payments" v-bind:key="p">
+        <div>
+          {{ i + 1 }}.
+          <i class="fa fa-calendar" aria-hidden="true"></i> &nbsp; {{ p.date }}
+          <span class="secondary-content black-text">
+            {{ p.amount }}
+          </span>
+        </div>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -62,5 +60,11 @@ export default {
 .table-header {
   background: @primary;
   color: @fontPrimary;
+}
+
+li.hoverable:hover {
+  background-color: @color2;
+  transition: background-color 0.5s linear;
+  cursor: pointer;
 }
 </style>
