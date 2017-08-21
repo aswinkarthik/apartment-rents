@@ -5,7 +5,7 @@
       <div class="row" v-bind:key='tenant.id'>
         <div class="col s12 m12">
           <div class="card primary-color-dim hoverable">
-            <div class="card-content white-text">
+            <div class="card-content primary-text">
               <span class="card-title">{{ tenant.name }}</span>
               <p>{{ tenant.description }}</p>
             </div>

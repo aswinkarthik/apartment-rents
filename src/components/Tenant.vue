@@ -61,6 +61,6 @@ export default {
 @import "../assets/css/vars.less";
 .table-header {
   background: @primary;
-  color: white;
+  color: @fontPrimary;
 }
 </style>
