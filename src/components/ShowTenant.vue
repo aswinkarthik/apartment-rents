@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="row">
+    <div class="row primary-text">
       <div class="col s12 m12">
         <div class="card hoverable secondary-color">
           <div class="card-content">
@@ -17,7 +17,7 @@
         <div>
           {{ i + 1 }}.
           <i class="fa fa-calendar" aria-hidden="true"></i> &nbsp; {{ p.date }}
-          <span class="secondary-content black-text">
+          <span class="secondary-content primary-text">
             {{ p.amount }}
           </span>
         </div>
@@ -57,13 +57,7 @@ export default {
 
 <style scoped lang="less">
 @import "../assets/css/vars.less";
-.table-header {
-  background: @primary;
-  color: @fontPrimary;
-}
-
 li.hoverable:hover {
-  background-color: @color2 !important;
   transition: background-color 0.5s linear;
   cursor: pointer;
 }

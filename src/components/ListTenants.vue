@@ -9,7 +9,7 @@
               <span class="card-title">{{ tenant.name }}</span>
               <p>{{ tenant.description }}</p>
             </div>
-            <div class="card-action">
+            <div class="card-action secondary-text-color">
               <a :href="url(tenant.id)">View</a>
             </div>
           </div>
@@ -17,7 +17,7 @@
       </div>
     </template>
     <div class="fixed-action-btn">
-      <a id="scale-demo" href="#!" class="btn-floating btn-large primary-color scale-transition">
+      <a id="scale-demo" href="#!" class="btn-floating btn-large accent-color scale-transition">
         <i class="fa fa-plus"></i>
       </a>
     </div>
@@ -47,8 +47,4 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
 @import "../assets/css/vars.less";
-
-.card-action a {
-  color: @fontSecondary !important;
-}
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nav>
-      <div class="nav-wrapper">
+      <div class="nav-wrapper dark-primary-color">
         <a href="#" class="center brand-logo">{{ header }}</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li>
@@ -54,9 +54,4 @@ export default {
   transform: translateX(10px);
   opacity: 0;
 }
-
-nav {
-  background: @primary;
-}
-
 </style>
