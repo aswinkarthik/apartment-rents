@@ -4,7 +4,7 @@
     <template v-for="tenant in tenants">
       <div class="row" v-bind:key='tenant.id'>
         <div class="col s12 m12">
-          <div class="card primary-color-dim hoverable">
+          <div class="card secondary-color hoverable">
             <div class="card-content primary-text">
               <span class="card-title">{{ tenant.name }}</span>
               <p>{{ tenant.description }}</p>
@@ -25,7 +25,7 @@
 </template>
 <script>
 export default {
-  name: 'hello',
+  name: 'tenants',
   data: () => {
     return {
       msg: 'Welcome to Your Vue.js App',
@@ -49,6 +49,6 @@ export default {
 @import "../assets/css/vars.less";
 
 .card-action a {
-  color: @secondary !important;
+  color: @fontSecondary !important;
 }
 </style>

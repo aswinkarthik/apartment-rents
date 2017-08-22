@@ -2,7 +2,7 @@
   <div>
     <div class="row">
       <div class="col s12 m12">
-        <div class="card hoverable">
+        <div class="card hoverable secondary-color">
           <div class="card-content">
             <h4>{{ tenant.id }} - {{ tenant.name }}</h4>
           </div>
@@ -10,10 +10,10 @@
       </div>
     </div>
     <ul class="collection with-header">
-      <li class="collection-header">
+      <li class="collection-header secondary-color">
         <h4>Payments</h4>
       </li>
-      <li class="collection-item hoverable" v-for="(p, i) in payments" v-bind:key="p">
+      <li class="collection-item hoverable secondary-color" v-for="(p, i) in payments" v-bind:key="p">
         <div>
           {{ i + 1 }}.
           <i class="fa fa-calendar" aria-hidden="true"></i> &nbsp; {{ p.date }}
@@ -63,7 +63,7 @@ export default {
 }
 
 li.hoverable:hover {
-  background-color: @color2;
+  background-color: @color2 !important;
   transition: background-color 0.5s linear;
   cursor: pointer;
 }

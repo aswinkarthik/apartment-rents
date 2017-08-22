@@ -5,7 +5,7 @@
         <a href="#" class="center brand-logo">{{ header }}</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li>
-            <a href="#/">Tenants</a>
+            <a href="#/tenants">Tenants</a>
           </li>
         </ul>
       </div>
@@ -58,4 +58,5 @@ export default {
 nav {
   background: @primary;
 }
+
 </style>
